@@ -1,0 +1,12 @@
+# sqlite data. May consider committing this in the future
+*.sqlite3
+
+# local env
+.env
+/venv/
+
+# admin site static files
+/static
+
+# python
+__pycache__

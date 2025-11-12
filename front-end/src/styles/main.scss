@@ -1,0 +1,56 @@
+:root {
+  // Background colors.
+  --primary-bg-color: #FFF2CD;
+  --secondary-bg-color: #fffbf0;
+  // Party colors.
+  --democratic-color: #3333FF;
+  --republican-color: #E81B23;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  color: #000000;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: .2rem auto;
+  text-align: center;
+}
+
+header {
+  margin: .5rem auto 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- Reset Rules --- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+button { all: unset; }
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}

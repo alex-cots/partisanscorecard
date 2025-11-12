@@ -1,0 +1,122 @@
+.mainContentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 65rem;
+  width: 100%;
+  padding: 0 .5rem;
+}
+
+.title {
+  text-transform: capitalize;
+  width: 100%;
+  margin: .1rem 0;
+
+  h1 {
+    margin: 0 0 1rem;
+  }
+
+  p {
+    font-size: large;
+
+    @media (max-width: 950px) {
+      font-size: medium;
+    }
+  }
+}
+
+.termSelectContainer {
+  font-size: x-large;
+  display: flex;
+  width: 100%;
+  gap: 1%;
+  margin: .5rem 0;
+
+  @media (max-width: 950px) {
+    font-size: large;
+  }
+
+  > select {
+    // Hack to make safari respect font-size.
+    border-color: black;
+  }
+}
+
+.statsContainer {
+  background-color: var(--secondary-bg-color);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  margin: 1.5rem;
+  max-width: 51rem;
+  min-width: min-content;
+  padding: .4rem 2.5rem 1.5rem 2.5rem;
+  width: 90%;
+
+
+  > div {
+    border: solid;
+    border-width: 0 0 1px 0;
+    padding: 1rem 0 0 0;
+    font-size: x-large;
+
+    @media (max-width: 950px) {
+      font-size: large;
+    }
+  }
+
+  > :nth-last-child(odd) {
+    text-align: right;
+  }
+
+  > :nth-last-child(even) {
+    padding-right: .3rem;
+  }
+  .countTotal {
+    font-size: 85%;
+    color: #515151;
+    margin-left: .4rem;
+    vertical-align: bottom;
+  }
+
+  .subRow {
+    font-size: .9rem;
+    color: #515151;
+
+    @media (max-width: 950px) {
+      font-size: .6rem;
+    }
+  }
+
+}
+
+.outlierTitle {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.voteControls {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  margin: 1rem 0;
+
+  @media (max-width: 950px) {
+    font-size: .6rem;
+  }
+
+  * * {
+    margin: 0 .2rem;
+  }
+}
+
+.showMoreButton {
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: .5rem 1rem;
+}
+
+.showMoreButton:hover {
+  text-decoration: underline;
+}

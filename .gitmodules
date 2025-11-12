@@ -1,0 +1,6 @@
+[submodule "submodules/congress"]
+	path = submodules/congress
+	url = https://github.com/unitedstates/congress.git
+[submodule "submodules/congress-legislators"]
+	path = submodules/congress-legislators
+	url = https://github.com/unitedstates/congress-legislators.git

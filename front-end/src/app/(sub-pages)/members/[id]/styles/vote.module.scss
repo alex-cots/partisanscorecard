@@ -1,0 +1,108 @@
+.container {
+  background-color: var(--secondary-bg-color);
+  border-radius: 1rem;
+  margin: 1rem 0;
+  min-width: min-content;
+  padding: .8rem 1rem .4rem 1rem;
+  width: 100%;
+
+  @media (max-width: 950px) {
+    padding: .5rem .5rem .2rem .5rem;
+  }
+}
+
+.democraticText {
+  text-decoration-color: var(--democratic-color);
+}
+
+.republicanText {
+  text-decoration-color: var(--republican-color);
+}
+
+.title {
+  font-size: medium;
+  margin: 0 0 1.5rem 0;
+  border-bottom: 1px solid;
+
+  @media (max-width: 950px) {
+    font-size: small;
+  }
+}
+
+.body {
+  display: grid;
+  font-size: large;
+  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  justify-items: center;
+  text-align: center;
+  text-wrap: balance;
+
+  @media (max-width: 950px) {
+    font-size: .9rem;
+  }
+
+  .positionLabel {
+    order: 0;
+    text-decoration-line: underline;
+    text-decoration-thickness: .15rem;
+  }
+
+  .resultLabel {
+    order: 0;
+    text-decoration-line: underline;
+  }
+
+  .positionValue {
+    align-items: baseline;
+    font-size: x-large;
+    min-height: 2.6rem;
+    order: 1;
+
+    @media (max-width: 950px) {
+      font-size: medium;
+    }
+  }
+
+  .resultValue {
+    align-items: baseline;
+    font-size: 1.3rem;
+    min-height: 2.6rem;
+    order: 1;
+
+    @media (max-width: 950px) {
+      font-size: .7rem;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 0 0 0;
+  row-gap: .6rem;
+  white-space: nowrap;
+
+  @media (max-width: 950px) {
+    font-size: x-small;
+    margin: 0;
+  }
+}
+
+.voteNumber {
+  flex: 1 0 0;
+  text-transform: capitalize;
+}
+
+.date {
+  margin: 0 1rem;
+}
+
+.links {
+  display: inline-flex;
+  flex: 1 0 0;
+  gap: 2rem;
+  justify-content: right;
+}

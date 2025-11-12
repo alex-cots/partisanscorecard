@@ -1,0 +1,2 @@
+# See /front-end/.gitignore and /back-end/.gitignore
+.env

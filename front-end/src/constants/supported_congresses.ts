@@ -1,0 +1,10 @@
+
+export const SUPPORTED_CONGRESSES = [
+  119,
+  118,
+  117
+] as const
+
+export type SUPPORTED_CONGRESS = typeof SUPPORTED_CONGRESSES[number]
+
+export const CURRENT_CONGRESS = SUPPORTED_CONGRESSES[0]

@@ -1,0 +1,124 @@
+.congressSelectContainer {
+  display: flex;
+  gap: .5%;
+  width: 100%;
+  justify-content: center;
+  font-size: large;
+  margin: 1rem;
+
+  select {
+    min-width: 5rem;
+    text-align: center;
+    // Hack to make safari respect font-size.
+    border-color: black;
+  }
+}
+
+.tableContainer {
+  overflow: auto;
+  max-width: 100%;
+}
+
+table.table {
+  background-color: var(--secondary-bg-color);
+  border: solid var(--secondary-bg-color);
+  border-width: .5rem 1rem 1rem 1rem;
+  border-collapse: collapse;
+  margin: .2rem auto;
+  width: 90dvw;
+
+  @media (max-width: 950px) {
+    border-width: 0;
+  }
+
+  th {
+    font-size: large;
+    padding: .3rem .4rem;
+    text-align: right;
+    white-space: nowrap;
+
+    @media (max-width: 950px) {
+      font-size: .8rem;
+      padding: .1rem .4rem;
+    }
+  }
+
+  td {
+    font-size: large;
+    padding: .3rem .4rem;
+    text-align: right;
+    white-space: nowrap;
+
+    @media (max-width: 950px) {
+      font-size: .7rem;
+      padding: .3rem .3rem .1rem .3rem;
+    }
+  }
+
+  td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+  }
+
+  tr:first-child > td {
+    border-top: none;
+  }
+
+  tr:last-child > td {
+    border-bottom: none;
+  }
+
+  .rank {
+    text-align: center;
+  }
+
+  .name {
+    text-align: left;
+    white-space: normal;
+    a {
+      font-weight: bold;
+    }
+  }
+
+  .party {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .state {
+    text-align: left;
+    white-space: normal;
+  }
+
+  abbr {
+    display: none;
+  }
+  @media (max-width: 950px) {
+    abbr {
+      display: inline;
+    }
+    .full {
+      display: none;
+    }
+    .party, .state {
+      text-align: center;
+    }
+  }
+}
+
+.democraticText {
+  color: var(--democratic-color);
+}
+
+.republicanText {
+  color: var(--republican-color);
+}
+
+.title {
+  margin: 1rem;
+}
+
+.sortable > button {
+  width: 100%;
+}

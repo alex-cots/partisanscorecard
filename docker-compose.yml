@@ -1,0 +1,47 @@
+name: 'partisanscorecard'
+
+services:
+  front-end:
+    build: './front-end'
+    depends_on:
+      back-end:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./front-end
+          target: /app
+          ignore:
+            - node_modules/
+            - out/
+
+    environment:
+      - 'API_ROOT=http://back-end:8000/api'
+      - 'CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}'
+      - 'CLOUDFLARE_PROJECT_NAME=${CLOUDFLARE_PROJECT_NAME}'
+    ports:
+      - '127.0.0.1:3003:3000'
+  back-end:
+    build: './back-end'
+    environment:
+      - 'VOTE_DATA_DIR=/partisanscorecard/vote-data'
+      - 'CONGRESS_DATA_DIR=/partisanscorecard/congress-data'
+      - 'CONGRESS_GOV_API_KEY=${CONGRESS_GOV_API_KEY:?}'
+      - 'DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY:?}'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+      interval: 1m
+      timeout: 3s
+      retries: 2
+      start_period: 1m
+      start_interval: 2s
+    ports:
+      - '127.0.0.1:3002:8000'
+    volumes:
+      - 'db-data:/partisanscorecard/code/db'
+      - './back-end:/partisanscorecard/code'
+      - './submodules/congress/data:/partisanscorecard/vote-data'
+      - './submodules/congress-legislators:/partisanscorecard/congress-data'
+
+volumes:
+  db-data:
