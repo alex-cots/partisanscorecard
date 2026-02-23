@@ -2,6 +2,9 @@
 
 # Scrape new data, add it to DB, rebuild app, and deploy.
 
+# Start healthchecks.io timing.
+curl "${HEALTHCHECK_URL}/start"
+
 # Log time first.
 date
 date >&2
@@ -36,3 +39,6 @@ docker compose run --rm --remove-orphans front-end /bin/bash -c 'npm run build &
 docker compose stop
 docker compose rm -f
 docker system prune -f
+
+# Signal success to healthchecks.io.
+curl "${HEALTHCHECK_URL}"
